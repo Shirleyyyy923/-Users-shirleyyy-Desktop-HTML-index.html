@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15题英语语法精练</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .question {
+            margin: 25px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        .question h3 {
+            margin-top: 0;
+            color: #e74c3c;
+        }
+        .options {
+            margin: 15px 0;
+        }
+        .option {
+            margin: 8px 0;
+            padding: 10px;
+            background: #f0f0f0;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option:hover {
+            background: #e0e0e0;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .answer {
+            margin-top: 15px;
+            padding: 12px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            color: #2e7d32;
+            font-weight: bold;
+            display: none;
+        }
+        .explanation {
+            margin-top: 10px;
+            padding: 12px;
+            background: #e3f2fd;
+            border-radius: 5px;
+            color: #1565c0;
+            display: none;
+        }
+        .encouragement {
+            margin-top: 10px;
+            padding: 12px;
+            background: #fff8e1;
+            border-radius: 5px;
+            color: #ff8f00;
+            font-style: italic;
+            display: none;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        textarea {
+            min-height: 60px;
+        }
+        .difficulty-beginner { border-left: 4px solid #2ecc71; }
+        .difficulty-intermediate { border-left: 4px solid #f39c12; }
+        .difficulty-advanced { border-left: 4px solid #e74c3c; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 15题英语语法精练</h1>
+        
+        <!-- 初级题目 -->
+        <div class="question difficulty-beginner" id="q1">
+            <h3>题1 (选择题)</h3>
+            <p>选择正确的句子：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q1')">She go to school every day.</div>
+                <div class="option correct" onclick="selectOption(this, 'q1')">She goes to school every day.</div>
+                <div class="option" onclick="selectOption(this, 'q1')">She going to school every day.</div>
+            </div>
+            <button onclick="checkAnswer('q1', 1)">检查答案</button>
+            <div class="answer">正确答案：She goes to school every day.</div>
+            <div class="explanation">解析：第三人称单数动词加"s"（go → goes）。</div>
+            <div class="encouragement">很棒！记住第三人称单数要加s哦！</div>
+        </div>
+        
+        <!-- 题2 -->
+        <div class="question difficulty-beginner" id="q2">
+            <h3>题2 (填空题)</h3>
+            <p>用be动词填空：I ___ (be) a student.</p>
+            <input type="text" id="ans-q2" placeholder="输入答案">
+            <button onclick="checkFillAnswer('q2', 'am')">检查答案</button>
+            <div class="answer">正确答案：am</div>
+            <div class="explanation">解析：I搭配am，you搭配are，he/she/it搭配is。</div>
+            <div class="encouragement">做得好！be动词的变化很重要！</div>
+        </div>
+        
+        <!-- 题3 -->
+        <div class="question difficulty-beginner" id="q3">
+            <h3>题3 (选择题)</h3>
+            <p>选择正确的疑问句：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q3')">Where you live?</div>
+                <div class="option correct" onclick="selectOption(this, 'q3')">Where do you live?</div>
+                <div class="option" onclick="selectOption(this, 'q3')">Where does you live?</div>
+            </div>
+            <button onclick="checkAnswer('q3', 1)">检查答案</button>
+            <div class="answer">正确答案：Where do you live?</div>
+            <div class="explanation">解析：疑问句结构：疑问词 + do/does + 主语 + 动词原形。</div>
+            <div class="encouragement">很好！疑问句要记得加助动词！</div>
+        </div>
+        
+        <!-- 中级题目 -->
+        <div class="question difficulty-intermediate" id="q4">
+            <h3>题4 (填空题)</h3>
+            <p>用过去式填空：Yesterday, I ___ (go) to the park.</p>
+            <input type="text" id="ans-q4" placeholder="输入答案">
+            <button onclick="checkFillAnswer('q4', 'went')">检查答案</button>
+            <div class="answer">正确答案：went</div>
+            <div class="explanation">解析：go的过去式是不规则变化（go → went）。</div>
+            <div class="encouragement">不错！记住常见动词的不规则变化！</div>
+        </div>
+        
+        <!-- 题5 -->
+        <div class="question difficulty-intermediate" id="q5">
+            <h3>题5 (选择题)</h3>
+            <p>选择正确的比较级：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q5')">This box is more big than that one.</div>
+                <div class="option correct" onclick="selectOption(this, 'q5')">This box is bigger than that one.</div>
+                <div class="option" onclick="selectOption(this, 'q5')">This box is biger than that one.</div>
+            </div>
+            <button onclick="checkAnswer('q5', 1)">检查答案</button>
+            <div class="answer">正确答案：This box is bigger than that one.</div>
+            <div class="explanation">解析：单音节词比较级加-er（big → bigger）。</div>
+            <div class="encouragement">太棒了！比较级变化规则掌握得很好！</div>
+        </div>
+        
+        <!-- 题6 -->
+        <div class="question difficulty-intermediate" id="q6">
+            <h3>题6 (填空题)</h3>
+            <p>用现在完成时填空：I ___ (read) this book three times.</p>
+            <input type="text" id="ans-q6" placeholder="输入答案">
+            <button onclick="checkFillAnswer('q6', 'have read')">检查答案</button>
+            <div class="answer">正确答案：have read</div>
+            <div class="explanation">解析：现在完成时结构：have/has + 过去分词（read的过去分词仍是read）。</div>
+            <div class="encouragement">完美！现在完成时用得很准确！</div>
+        </div>
+        
+        <!-- 题7 -->
+        <div class="question difficulty-intermediate" id="q7">
+            <h3>题7 (选择题)</h3>
+            <p>选择正确的被动语态：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q7')">The letter was wrote by Tom.</div>
+                <div class="option correct" onclick="selectOption(this, 'q7')">The letter was written by Tom.</div>
+                <div class="option" onclick="selectOption(this, 'q7')">The letter written by Tom.</div>
+            </div>
+            <button onclick="checkAnswer('q7', 1)">检查答案</button>
+            <div class="answer">正确答案：The letter was written by Tom.</div>
+            <div class="explanation">解析：被动语态结构：was/were + 过去分词（write → written）。</div>
+            <div class="encouragement">很好！被动语态的结构掌握得很牢固！</div>
+        </div>
+        
+        <!-- 题8 -->
+        <div class="question difficulty-intermediate" id="q8">
+            <h3>题8 (改错题)</h3>
+            <p>改正句子：She don't likes coffee.</p>
+            <textarea id="ans-q8" placeholder="输入改正后的句子"></textarea>
+            <button onclick="checkCorrection('q8', 'She doesn\'t like coffee.')">检查答案</button>
+            <div class="answer">正确答案：She doesn't like coffee.</div>
+            <div class="explanation">解析：否定结构：doesn't + 动词原形（去掉第三人称单数的's'）。</div>
+            <div class="encouragement">不错！记住否定句的构成方式！</div>
+        </div>
+        
+        <!-- 高级题目 -->
+        <div class="question difficulty-advanced" id="q9">
+            <h3>题9 (选择题)</h3>
+            <p>选择正确的虚拟语气：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q9')">If I am you, I will go.</div>
+                <div class="option" onclick="selectOption(this, 'q9')">If I was you, I would go.</div>
+                <div class="option correct" onclick="selectOption(this, 'q9')">If I were you, I would go.</div>
+            </div>
+            <button onclick="checkAnswer('q9', 2)">检查答案</button>
+            <div class="answer">正确答案：If I were you, I would go.</div>
+            <div class="explanation">解析：虚拟语气中be动词统一用were，主句用would/could/should + 动词原形。</div>
+            <div class="encouragement">太棒了！虚拟语气用得非常好！</div>
+        </div>
+        
+        <!-- 题10 -->
+        <div class="question difficulty-advanced" id="q10">
+            <h3>题10 (填空题)</h3>
+            <p>用将来完成时填空：By 2030, scientists ___ (discover) a cure for cancer.</p>
+            <input type="text" id="ans-q10" placeholder="输入答案">
+            <button onclick="checkFillAnswer('q10', 'will have discovered')">检查答案</button>
+            <div class="answer">正确答案：will have discovered</div>
+            <div class="explanation">解析：将来完成时结构：will have + 过去分词。</div>
+            <div class="encouragement">非常好！复杂时态也难不倒你！</div>
+        </div>
+        
+        <!-- 题11 -->
+        <div class="question difficulty-advanced" id="q11">
+            <h3>题11 (选择题)</h3>
+            <p>选择正确的定语从句：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q11')">This is the book who I bought yesterday.</div>
+                <div class="option correct" onclick="selectOption(this, 'q11')">This is the book that I bought yesterday.</div>
+                <div class="option" onclick="selectOption(this, 'q11')">This is the book what I bought yesterday.</div>
+            </div>
+            <button onclick="checkAnswer('q11', 1)">检查答案</button>
+            <div class="answer">正确答案：This is the book that I bought yesterday.</div>
+            <div class="explanation">解析：指物时关系代词用that/which，不能用who或what。</div>
+            <div class="encouragement">漂亮！定语从句的关系代词用得很准确！</div>
+        </div>
+        
+        <!-- 题12 -->
+        <div class="question difficulty-advanced" id="q12">
+            <h3>题12 (填空题)</h3>
+            <p>用过去完成时填空：When I arrived, the train ___ already ___ (leave).</p>
+            <input type="text" id="ans-q12" placeholder="输入答案（两个单词）">
+            <button onclick="checkFillAnswer('q12', 'had left')">检查答案</button>
+            <div class="answer">正确答案：had left</div>
+            <div class="explanation">解析：过去完成时表示"过去的过去"，结构：had + 过去分词。</div>
+            <div class="encouragement">太棒了！你完全理解了过去完成时的用法！</div>
+        </div>
+        
+        <!-- 题13 -->
+        <div class="question difficulty-advanced" id="q13">
+            <h3>题13 (改错题)</h3>
+            <p>改正句子：Despite of the rain, we went out.</p>
+            <textarea id="ans-q13" placeholder="输入改正后的句子"></textarea>
+            <button onclick="checkCorrection('q13', 'Despite the rain, we went out.')">检查答案</button>
+            <div class="answer">正确答案：Despite the rain, we went out.</div>
+            <div class="explanation">解析：despite后直接接名词，不加of；in spite of才需要加of。</div>
+            <div class="encouragement">很好！这些易混介词短语现在记住了吧！</div>
+        </div>
+        
+        <!-- 题14 -->
+        <div class="question difficulty-advanced" id="q14">
+            <h3>题14 (选择题)</h3>
+            <p>选择正确的倒装句：</p>
+            <div class="options">
+                <div class="option" onclick="selectOption(this, 'q14')">Never I have seen such a beautiful place.</div>
+                <div class="option correct" onclick="selectOption(this, 'q14')">Never have I seen such a beautiful place.</div>
+                <div class="option" onclick="selectOption(this, 'q14')">Never I seen have such a beautiful place.</div>
+            </div>
+            <button onclick="checkAnswer('q14', 1)">检查答案</button>
+            <div class="answer">正确答案：Never have I seen such a beautiful place.</div>
+            <div class="explanation">解析：否定词开头的句子要部分倒装（助动词提前）。</div>
+            <div class="encouragement">太棒了！倒装句结构掌握得很扎实！</div>
+        </div>
+        
+        <!-- 题15 -->
+        <div class="question difficulty-advanced" id="q15">
+            <h3>题15 (填空题)</h3>
+            <p>用情态动词填空：You ___ (not) smoke here. It's prohibited.</p>
+            <input type="text" id="ans-q15" placeholder="输入答案">
+            <button onclick="checkFillAnswer('q15', 'must not')">检查答案</button>
+            <div class="answer">正确答案：must not</div>
+            <div class="explanation">解析：must not表示禁止，语气强烈。</div>
+            <div class="encouragement">完美！情态动词的否定形式用得很准确！</div>
+        </div>
+    </div>
+
+    <script>
+        // 选择选项
+        function selectOption(element, questionId) {
+            const questionDiv = document.getElementById(questionId);
+            questionDiv.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            element.classList.add('selected');
+        }
+
+        // 检查选择题答案
+        function checkAnswer(questionId, correctIndex) {
+            const questionDiv = document.getElementById(questionId);
+            const selectedOption = questionDiv.querySelector('.option.selected');
+            const correctOption = questionDiv.querySelectorAll('.option')[correctIndex];
+            
+            // 显示反馈
+            questionDiv.querySelector('.answer').style.display = 'block';
+            questionDiv.querySelector('.explanation').style.display = 'block';
+            questionDiv.querySelector('.encouragement').style.display = 'block';
+            
+            // 视觉反馈
+            questionDiv.querySelectorAll('.option').forEach(opt => {
+                opt.style.background = '';
+                opt.style.borderLeft = '';
+            });
+            
+            correctOption.style.background = '#d4edda';
+            correctOption.style.borderLeft = '4px solid #28a745';
+            
+            if (selectedOption && selectedOption !== correctOption) {
+                selectedOption.style.background = '#f8d7da';
+                selectedOption.style.borderLeft = '4px solid #dc3545';
+            }
+        }
+
+        // 检查填空题答案
+        function checkFillAnswer(questionId, correctAnswer) {
+            const questionDiv = document.getElementById(questionId);
+            const userAnswer = document.getElementById(`ans-${questionId}`).value.trim().toLowerCase();
+            
+            // 显示反馈
+            questionDiv.querySelector('.answer').style.display = 'block';
+            questionDiv.querySelector('.explanation').style.display = 'block';
+            questionDiv.querySelector('.encouragement').style.display = 'block';
+            
+            // 视觉反馈
+            const inputElement = document.getElementById(`ans-${questionId}`);
+            inputElement.style.borderLeft = '4px solid ' + 
+                (userAnswer === correctAnswer.toLowerCase() ? '#28a745' : '#dc3545');
+            inputElement.style.background = userAnswer === correctAnswer.toLowerCase() ? 
+                '#d4edda' : '#f8d7da';
+        }
+
+        // 检查改错题答案
+        function checkCorrection(questionId, correctAnswer) {
+            const questionDiv = document.getElementById(questionId);
+            const userAnswer = document.getElementById(`ans-${questionId}`).value.trim().toLowerCase();
+            
+            // 显示反馈
+            questionDiv.querySelector('.answer').style.display = 'block';
+            questionDiv.querySelector('.explanation').style.display = 'block';
+            questionDiv.querySelector('.encouragement').style.display = 'block';
+            
+            // 视觉反馈
+            const textareaElement = document.getElementById(`ans-${questionId}`);
+            textareaElement.style.borderLeft = '4px solid ' + 
+                (userAnswer === correctAnswer.toLowerCase() ? '#28a745' : '#dc3545');
+            textareaElement.style.background = userAnswer === correctAnswer.toLowerCase() ? 
+                '#d4edda' : '#f8d7da';
+        }
+    </script>
+</body>
+</html>
